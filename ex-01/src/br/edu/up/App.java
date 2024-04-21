@@ -11,7 +11,7 @@ public class App {
     aluno.setNotaA2(Console.readLong("Digite a nota da avaliação 2: "));
     aluno.setNotaA3(Console.readLong("Digite a nota da avaliação 3: "));
 
-    float media = aluno.calcularMedia(aluno.getNotaA1(), aluno.getNotaA2(), aluno.getNotaA3());
+    double media = aluno.calcularMedia();
 
     System.out.println("Olá " + aluno.getNome() + " a sua média foi de: " + media );
   }
