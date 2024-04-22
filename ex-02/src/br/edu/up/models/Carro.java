@@ -1,26 +1,15 @@
 package br.edu.up.models;
 
 public class Carro {
-  private String nome;
-  private String modelo;
-  private double consumoMedio;
-  
-  public String getNome() {
-    return nome;
+  private double distanciaTotal;
+  private double combustivelGasto;
+
+  public Carro(double distanciaTotal, double combustivelGasto) {
+    this.distanciaTotal = distanciaTotal;
+    this.combustivelGasto = combustivelGasto;
   }
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-  public String getModelo() {
-    return modelo;
-  }
-  public void setModelo(String modelo) {
-    this.modelo = modelo;
-  }
-  public double getConsumoMedio() {
-    return consumoMedio;
-  }
-  public void setConsumoMedio(double consumoMedio) {
-    this.consumoMedio = consumoMedio;
+
+  public double consumoMedio() {
+    return distanciaTotal / combustivelGasto;
   }
 }
