@@ -1,23 +1,23 @@
 package br.edu.up.models;
 
 public class Pessoa {
-    private String nome;
-    private char sexo; // 'M' para masculino, 'F' para feminino
+	private String nome;
+	private String genero;
 
-    public Pessoa(String nome, char sexo) {
-        this.nome = nome;
-        this.sexo = sexo;
-    }
+	public Pessoa(String nome, String genero) {
+		this.nome = nome;
+		this.genero = genero;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public char getSexo() {
-        return sexo;
-    }
+	public String getGenero() {
+		return genero;
+	}
 
-    public String getSexoString() {
-        return (sexo == 'M') ? "Homem" : "Mulher";
-    }
+	public Boolean verificaGenero(char genero) {
+		return genero == 'M';
+	}
 }

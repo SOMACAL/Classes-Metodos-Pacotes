@@ -1,4 +1,4 @@
-package src.br.edu.up.models;
+package br.edu.up.models;
 
 public class Carro {
 	private double custoFabrica;

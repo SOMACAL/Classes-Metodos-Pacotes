@@ -1,8 +1,8 @@
-package src.br.edu.up;
+package br.edu.up;
 
 import java.text.DecimalFormat;
-import src.br.edu.up.models.Carro;
-import src.br.edu.up.models.Console;
+import br.edu.up.models.Carro;
+import br.edu.up.models.Console;
 
 public class App {
 	public static void main(String[] args) {
