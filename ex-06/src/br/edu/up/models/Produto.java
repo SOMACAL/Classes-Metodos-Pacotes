@@ -1,19 +1,15 @@
 package br.edu.up.models;
 
 public class Produto {
-  private String nome;
   private double precoCusto;
-  
-  public String getNome() {
-    return nome;
-  }
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-  public double getPrecoCusto() {
-    return precoCusto;
-  }
-  public void setPrecoCusto(double precoCusto) {
+  private double percentualAcrescimo;
+
+  public Produto(double precoCusto, double percentualAcrescimo) {
     this.precoCusto = precoCusto;
+    this.percentualAcrescimo = percentualAcrescimo;
+  }
+
+  public double calcularValorVenda() {
+    return precoCusto + (precoCusto * percentualAcrescimo / 100);
   }
 }
