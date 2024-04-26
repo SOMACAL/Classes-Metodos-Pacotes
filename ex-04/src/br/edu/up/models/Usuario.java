@@ -1,19 +1,15 @@
 package br.edu.up.models;
 
 public class Usuario {
-  private String nome;
-  private double qtdDolares;
+  private double cotacaoDolar;
+  private double quantidadeDolares;
 
-  public String getNome() {
-    return nome;
+  public Usuario(double cotacaoDolar, double quantidadeDolares) {
+    this.cotacaoDolar = cotacaoDolar;
+    this.quantidadeDolares = quantidadeDolares;
   }
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-  public double getQtdDolares() {
-    return qtdDolares;
-  }
-  public void setQtdDolares(double qtdDolares) {
-    this.qtdDolares = qtdDolares;
+
+  public double converterParaReais() {
+    return quantidadeDolares * cotacaoDolar;
   }
 }
