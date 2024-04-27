@@ -1,11 +1,17 @@
 {
   "java.project.sourcePaths": [
+    "ex-25/src",
+    "ex-23/src",
+    "ex-21/src",
+    "ex-19/src",
+    "ex-17/src",
+    "ex-15/src",
+    "ex-13/src",
     "ex-11/src",
     "ex-09/src",
     "ex-07/src",
     "ex-05/src",
     "ex-03/src",
-    "ex-01/src",
-    "br.edu.up"
+    "ex-01/src"
   ]
 }
