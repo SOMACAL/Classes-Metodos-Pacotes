@@ -1,26 +1,40 @@
 package br.edu.up.models;
 
 public class Residencia {
-  private String tipo;
-  private String endereco;
-  private double kwH;
-  
-  public String getTipo() {
-    return tipo;
+  private int tipoCliente; // 1 - Residência, 2 - Comércio, 3 - Indústria
+  private double valorKWh;
+
+  public Residencia(int tipoCliente) {
+      this.tipoCliente = tipoCliente;
+      definirValorKWh();
   }
-  public void setTipo(String tipo) {
-    this.tipo = tipo;
+
+  private void definirValorKWh() {
+      switch (tipoCliente) {
+          case 1:
+              valorKWh = 0.602;
+              break;
+          case 2:
+              valorKWh = 0.483;
+              break;
+          case 3:
+              valorKWh = 1.29;
+              break;
+          default:
+              System.out.println("Tipo de cliente inválido.");
+      }
   }
-  public String getEndereco() {
-    return endereco;
+
+  public double calcularConta(int consumoKWh) {
+      return consumoKWh * valorKWh;
   }
-  public void setEndereco(String endereco) {
-    this.endereco = endereco;
+
+  public void setTipoCliente(int tipoCliente) {
+      this.tipoCliente = tipoCliente;
+      definirValorKWh();
   }
-  public double getKwH() {
-    return kwH;
-  }
-  public void setKwH(double kwH) {
-    this.kwH = kwH;
+
+  public double getValorKWh() {
+      return valorKWh;
   }
 }

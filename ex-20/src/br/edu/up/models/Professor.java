@@ -1,33 +1,40 @@
 package br.edu.up.models;
 
 public class Professor {
-  private String nome;
   private int nivel;
-  private double horaAula;
-  private double salario = 0;
-  
-  public String getNome() {
-    return nome;
+  private double valorHoraAula;
+
+  public Professor(int nivel) {
+      this.nivel = nivel;
+      definirValorHoraAula();
   }
-  public void setNome(String nome) {
-    this.nome = nome;
+
+  private void definirValorHoraAula() {
+      switch (nivel) {
+          case 1:
+              valorHoraAula = 12.0;
+              break;
+          case 2:
+              valorHoraAula = 17.0;
+              break;
+          case 3:
+              valorHoraAula = 25.0;
+              break;
+          default:
+              System.out.println("Nível de professor inválido.");
+      }
   }
-  public int getNivel() {
-    return nivel;
+
+  public double calcularSalario(int horasAula) {
+      return horasAula * valorHoraAula;
   }
+
   public void setNivel(int nivel) {
-    this.nivel = nivel;
+      this.nivel = nivel;
+      definirValorHoraAula();
   }
-  public double getHoraAula() {
-    return horaAula;
-  }
-  public void setHoraAula(double horaAula) {
-    this.horaAula = horaAula;
-  }
-  public double getSalario() {
-    return salario;
-  }
-  public void setSalario(double salario) {
-    this.salario = salario;
+
+  public double getValorHoraAula() {
+      return valorHoraAula;
   }
 }

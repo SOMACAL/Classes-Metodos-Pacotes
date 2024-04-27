@@ -1,26 +1,29 @@
 package br.edu.up.models;
 
 public class Produto {
-  private String nome;
   private double precoCusto;
   private double precoVenda;
-  
-  public String getNome() {
-    return nome;
+
+  public Produto(double precoCusto, double precoVenda) {
+      this.precoCusto = precoCusto;
+      this.precoVenda = precoVenda;
   }
-  public void setNome(String nome) {
-    this.nome = nome;
+
+  public String calcularLucroOuPrejuizo() {
+      if (precoVenda > precoCusto) {
+          return "Lucro";
+      } else if (precoVenda < precoCusto) {
+          return "Prejuízo";
+      } else {
+          return "Empate";
+      }
   }
+
   public double getPrecoCusto() {
-    return precoCusto;
+      return precoCusto;
   }
-  public void setPrecoCusto(double precoCusto) {
-    this.precoCusto = precoCusto;
-  }
+
   public double getPrecoVenda() {
-    return precoVenda;
-  }
-  public void setPrecoVenda(double precoVenda) {
-    this.precoVenda = precoVenda;
+      return precoVenda;
   }
 }

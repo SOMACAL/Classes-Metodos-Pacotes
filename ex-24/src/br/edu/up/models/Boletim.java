@@ -1,26 +1,25 @@
 package br.edu.up.models;
-
 public class Boletim {
-  private double trabalhoLab = 2;
-  private double avSemestral = 3;
-  private double exameFinal = 5;
-  
-  public double getTrabalhoLab() {
-    return trabalhoLab;
+  private Aluno aluno;
+
+  public Boletim(Aluno aluno) {
+      this.aluno = aluno;
   }
-  public void setTrabalhoLab(double trabalhoLab) {
-    this.trabalhoLab = trabalhoLab;
+
+  public void exibirBoletim() {
+      double notaFinal = aluno.calcularNotaFinal();
+      System.out.println("Boletim de " + aluno.getNome());
+      System.out.println("Nota final: " + notaFinal);
+      System.out.println("Situação: " + obterSituacao(notaFinal));
   }
-  public double getAvSemestral() {
-    return avSemestral;
-  }
-  public void setAvSemestral(double avSemestral) {
-    this.avSemestral = avSemestral;
-  }
-  public double getExameFinal() {
-    return exameFinal;
-  }
-  public void setExameFinal(double exameFinal) {
-    this.exameFinal = exameFinal;
+
+  private String obterSituacao(double notaFinal) {
+      if (notaFinal >= 7.0) {
+          return "Aprovado";
+      } else if (notaFinal >= 5.0) {
+          return "Recuperação";
+      } else {
+          return "Reprovado";
+      }
   }
 }

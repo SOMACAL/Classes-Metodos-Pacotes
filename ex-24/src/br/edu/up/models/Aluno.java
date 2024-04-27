@@ -2,25 +2,22 @@ package br.edu.up.models;
 
 public class Aluno {
   private String nome;
-  private String curso;
-  private Boletim boletim;
-  
+  private double notaLaboratorio;
+  private double notaAvaliacaoSemestral;
+  private double notaExameFinal;
+
+  public Aluno(String nome, double notaLaboratorio, double notaAvaliacaoSemestral, double notaExameFinal) {
+      this.nome = nome;
+      this.notaLaboratorio = notaLaboratorio;
+      this.notaAvaliacaoSemestral = notaAvaliacaoSemestral;
+      this.notaExameFinal = notaExameFinal;
+  }
+
+  public double calcularNotaFinal() {
+      return (notaLaboratorio * 2 + notaAvaliacaoSemestral * 3 + notaExameFinal * 5) / 10;
+  }
+
   public String getNome() {
-    return nome;
-  }
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-  public String getCurso() {
-    return curso;
-  }
-  public void setCurso(String curso) {
-    this.curso = curso;
-  }
-  public Boletim getBoletim() {
-    return boletim;
-  }
-  public void setBoletim(Boletim boletim) {
-    this.boletim = boletim;
+      return nome;
   }
 }
